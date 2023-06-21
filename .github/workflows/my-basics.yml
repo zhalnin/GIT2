@@ -1,0 +1,27 @@
+#--------------------------------------------
+# GitHub Action Basic
+#
+# Copyright (c) by Aleksey Zhalnin 2023.
+#--------------------------------------------
+
+name: My-GitHubAction
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  git2_build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print Hello Message
+      run: echo "Hello World from Testing job"
+      
+  git2_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print Hello Message
+      run: echo "Hello World from Deploy job"
