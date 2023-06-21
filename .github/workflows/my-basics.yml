@@ -7,7 +7,7 @@
 name: My-GitHubAction
 env:
   APPLICATION_NAME: "Git2"
-  DEPLOY_PACKAGE_NAME: "git2-deploy-ver-$({github.sha})"
+  DEPLOY_PACKAGE_NAME: "git2-deploy-ver-${{github.sha}}"
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
       run: |
         echo "Hello message#1"
         echo "Hello message#2"
-        echo "Application name: $({env.APPLICATION_NAME})"
+        echo "Application name: ${{env.APPLICATION_NAME}}"
       
   git2_deploy:
     runs-on: ubuntu-latest
@@ -38,4 +38,4 @@ jobs:
       run: echo "Hello World from Deploy job"
       
     - name: Print Deployment package
-      run: echo "Deploy package name is $({env.DEPLOY_PACKAGE_NAME})"
+      run: echo "Deploy package name is ${{env.DEPLOY_PACKAGE_NAME}}"
