@@ -42,9 +42,21 @@ jobs:
     
     needs: [git2_build]
     
+    env: 
+      VAR1: "This is Job level variable#1"
+      VAR2: "This is Job level variable#2"
+    
     steps:
     - name: Print Hello Message
       run: echo "Hello World from Deploy job"
+      
+    - name: Print env vars
+      run: |
+        echo " VAR1: ${{env.VAR1}}"
+        echo " VAR2: ${{env.VAR2}}"
+        echo " VAR3: $LOCAL_VAR"
+      env:
+        LOCAL_VAR: "This is Super local environment variable"
       
     - name: Print Deployment package
       run: echo "Deploy package name is ${{env.DEPLOY_PACKAGE_NAME}}"
@@ -53,5 +65,5 @@ jobs:
       run: aws --version
       
     - name: Lets test some package if there are here#2
-      run: zip
+      run: zip --version
       
