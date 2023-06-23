@@ -4,7 +4,7 @@
 # Copyright (c) by Aleksey Zhalnin 2023.
 #--------------------------------------------
 
-name: CI-CD-Pipeline-to-AWS_ElasticBeanstalk
+name: CI-CD-Pipeline-to-AWS-ElasticBeanstalk
 env:
   EB_PACKAGE_S3_BUCKET_NAME: "adv-it-flask-application-packages"
   EB_APPLICATION_NAME: "MyFlask"
@@ -18,7 +18,7 @@ on:
       - main
 jobs:
   my_ci_part:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Git clone our repo
