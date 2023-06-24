@@ -10,7 +10,7 @@ env:
   EB_APPLICATION_NAME: "Git2"
   EB_ENVIRONMENT_NAME: "Git2-env"
   DEPLOY_PACKAGE_NAME: "git2_app_${{github.sha}}.zip"
-  AWS_REGION_NAME: "us-west-2"
+  AWS_REGION_NAME: "eu-north-1"
   
 on:
   push:
